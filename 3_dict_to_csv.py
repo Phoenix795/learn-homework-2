@@ -17,8 +17,7 @@ def main(employees):
         fields = ['name', 'age', 'job', 'gender']
         writer = csv.DictWriter(employeefile, fields, delimiter='\t')
         writer.writeheader()
-        for person in employees:
-            writer.writerow(person)
+        writer.writerows(employees)
 
 
 if __name__ == "__main__":

@@ -14,10 +14,10 @@
 def main():
     with open('referat.txt', 'r', encoding='utf-8') as recieved_file:
         read_text = recieved_file.read()
-        common_line = read_text.replace('\n', ' ').replace('  ', ' ')
-        words_from_file = common_line.split(sep=' ')
-        print('Длинну получившейся строки: {} символов'.format(len(common_line)))
-        print('Количество слов в тексте: {}'.format(len(words_from_file)))
+    common_line = read_text.replace('\n', ' ').replace('  ', ' ')
+    words_from_file = common_line.split()
+    print('Длинну получившейся строки: {} символов'.format(len(common_line)))
+    print('Количество слов в тексте: {}'.format(len(words_from_file)))
     
     with open('referat2.txt', 'w', encoding='utf-8') as file_with_result:
         file_with_result.write(read_text.replace('.', '!'))

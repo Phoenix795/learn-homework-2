@@ -15,16 +15,16 @@ locale.setlocale(locale.LC_TIME, 'ru_RU')
 
 def print_days():
     delta = timedelta(days=1)
+    today = date.today()
     format = '%d %B %Y - %A'
 
-    print((date.today() - delta).strftime(format))
-    print(date.today().strftime(format))
-    print((date.today() - 30 * delta).strftime(format))
+    print("Вчера: ", (today - delta).strftime(format))
+    print("Сегодня: ", today.strftime(format))
+    print("30 дней назад: ", (today - 30 * delta).strftime(format))
 
 
 def str_2_datetime(date_string):
     dfs = datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
-    #print(type(dfs))
     return dfs
 
 if __name__ == "__main__":
